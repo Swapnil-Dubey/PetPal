@@ -2,10 +2,9 @@
 ## Project Proposal 
 <!--Added Title and Sub-title-->
 
-- The purpose of this project is to create a Java-based desktop 
-application that allows pet owners to keep track of important 
+- This application allows pet owners to keep track of important 
 activities related to their pet's care and well-being. The application
-will allow users to record when they fed, gave water, gave treats, 
+will let users record when they fed, gave water, gave treats, 
 and took their pet for a walk. Additionally, the application will 
 offer personalized recommendations for pet owners, based on 
 the previous recorded activities. This will help determine 
