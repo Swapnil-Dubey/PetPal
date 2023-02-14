@@ -38,6 +38,7 @@ and software development.
 ## User Stories:
 - As a user, I want to be able to add my new pet to the list of pets I have
 - As a user, I want to be able to delete a pet I don't own anymore
+- As a user, I want to see all the pets I have in my house
 - As a user, I want to update an interaction with a pet I recently performed, such as giving water to the pet
 - As a user, I want recommendations from the app for what to do at current time to cater to my pet's needs
 
