@@ -30,6 +30,7 @@ public class Pet {
     public boolean playWith() {
         PetAction playingaction = new PetAction(name, "Playing", timeformat.format(currentdate));
         this.petactions.add(playingaction);
+        System.out.println("Played with " + this.getName() + ". Woohoo So fun!");
         return true;
     }
 
@@ -41,6 +42,7 @@ public class Pet {
         wateraction.setActionperformed("Giving Water");
         wateraction.setTimeofaction(timeformat.format(currentdate));
         this.petactions.add(wateraction);
+        System.out.println("Slurp Slurp.");
         return true;
 
     }
@@ -53,6 +55,7 @@ public class Pet {
         foodaction.setActionperformed("Giving Food");
         foodaction.setTimeofaction(timeformat.format(currentdate));
         this.petactions.add(foodaction);
+        System.out.println("Chomp Chomp.");
         return true;
 
     }
@@ -65,6 +68,7 @@ public class Pet {
         treataction.setActionperformed("Giving Treats");
         treataction.setTimeofaction(timeformat.format(currentdate));
         this.petactions.add(treataction);
+        System.out.println("Chomp Chomp Yum!");
         return true;
 
     }
@@ -77,6 +81,7 @@ public class Pet {
         walkingaction.setActionperformed("Walking");
         walkingaction.setTimeofaction(timeformat.format(currentdate));
         this.petactions.add(walkingaction);
+        System.out.println("Ah So tired now!");
         return true;
 
     }
@@ -89,6 +94,7 @@ public class Pet {
         trainingaction.setActionperformed("Training");
         trainingaction.setTimeofaction(timeformat.format(currentdate));
         this.petactions.add(trainingaction);
+        System.out.println("Trained!");
         return true;
 
     }
@@ -101,6 +107,7 @@ public class Pet {
         groomingaction.setActionperformed("Grooming");
         groomingaction.setTimeofaction(timeformat.format(currentdate));
         this.petactions.add(groomingaction);
+        System.out.println("Brush Brush");
         return true;
 
     }

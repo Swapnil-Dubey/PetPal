@@ -12,7 +12,7 @@ public class PetAction {
         this.actionperformed = myactionperformed;
     }
 
-    public String getTimeofaction() {
+    public String getTimeOfAction() {
         return timeofaction;
     }
 
@@ -20,7 +20,7 @@ public class PetAction {
         this.timeofaction = timeofaction;
     }
 
-    public String getActionperformed() {
+    public String getActionPerformed() {
         return actionperformed;
     }
 
