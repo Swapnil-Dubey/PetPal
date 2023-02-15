@@ -1,10 +1,10 @@
 package model;
-// Represents a single pet and its performable actions
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+// Represents a single pet and its performable actions
 public class Pet {
     String name;
     Double age;

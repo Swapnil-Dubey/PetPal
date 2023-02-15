@@ -1,9 +1,8 @@
 package model;
-// Represents all the pets currently owned by the user, with no duplicates
-
 
 import java.util.ArrayList;
 
+// Represents all the pets currently owned by the user, with no duplicates
 public class HouseOfPets {
     private ArrayList<Pet> pets;
 
@@ -27,8 +26,7 @@ public class HouseOfPets {
 
     // REQUIRES: same pet not already in pets
     // MODIFIES: this
-    // EFFECTS: adds a given Pet p to this.pets, only if current count of pets < maxcapacity
-    // and the same pet is not already in the list
+    // EFFECTS: adds a given Pet p to this.pets
     public boolean addPet(Pet p) {
         this.pets.add(p);
         return true;

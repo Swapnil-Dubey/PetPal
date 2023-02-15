@@ -7,8 +7,8 @@ import model.PetAction;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// Pet-Care tracking application
 // Source: took help from AccountNotRobust-TellerApp.java for creating this PetApp UI
+// Pet-Care tracking application
 public class PetApp {
     private HouseOfPets myhouse = new HouseOfPets();
     private Scanner input;
@@ -82,7 +82,7 @@ public class PetApp {
         System.out.println("\tq -> quit");
     }
 
-    // REQUIRES: input age and weight should be > 0, type double and name, type, breed should have 1 character minimum.
+    // REQUIRES: input age and weight should be > 0,oftype double and name, type, breed should have 1 character minimum.
     // MODIFIES: myhouse
     // EFFECTS: adds a Pet object to our house of pets.
     private void addPet() {
@@ -101,7 +101,7 @@ public class PetApp {
     }
 
     // MODIFIES: myhouse
-    // EFFECTS: Removes a pet from the house, if present
+    // EFFECTS: removes a pet from the house, if present
     private void removePet() {
         Pet chosenpet = selectFromPets();
         if (!chosenpet.getName().equals("")) {
@@ -114,15 +114,15 @@ public class PetApp {
 
     }
 
-    // REQUIRES: Atleast one pet in myhouse.pets
-    // EFFECTS: Prints out the names of pets in myhouse
+    // REQUIRES: atleast one pet in myhouse.pets
+    // EFFECTS: prints out the names of pets in myhouse
     private void showPets() {
         for (int i = 0; i < myhouse.getMyPets().size(); i++) {
             System.out.println("Pet: " + myhouse.getMyPets().get(i).getName());
         }
     }
 
-    // EFFECTS: prompts the user to choose a pet and then interact with it
+    // EFFECTS: prompts the user to choose a pet and then interact with it or else prints error message
     private void actionPet() {
         Pet chosenpet = selectFromPets();
         if (!chosenpet.getName().equals("")) {
@@ -133,6 +133,7 @@ public class PetApp {
 
     }
 
+    // REQUIRES: there should be at least 1 action performed earlier with the chosen pet
     // EFFECTS: makes sure the user has chosen a valid pet, then calls evaluateActions with chosen pet, otherwise false
     private void history() {
         Pet chosenpet = selectFromPets();
