@@ -78,5 +78,10 @@ public class PetTest {
         assertEquals(1, p1.petactions.size());
     }
 
+    @Test
+    public void getPetActionsTest() {
+        assertEquals(0, p.getPetActions().size());
+    }
+
 
 }

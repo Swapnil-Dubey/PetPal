@@ -10,7 +10,7 @@ import java.util.Scanner;
 // Pet-Care tracking application
 // Source: took help from AccountNotRobust-TellerApp.java for creating this PetApp UI
 public class PetApp {
-    private final HouseOfPets myhouse = new HouseOfPets(10);
+    private HouseOfPets myhouse = new HouseOfPets();
     private Scanner input;
 
 
@@ -66,7 +66,7 @@ public class PetApp {
 
         Pet dogPet = new Pet("Max", 2.0, "Dog", "Bulldog", 23.0);
         Pet catPet = new Pet("October", 1.5, "Cat", "Ragdoll", 9.07);
-        HouseOfPets hops = new HouseOfPets(10);
+        HouseOfPets hops = new HouseOfPets();
         input = new Scanner(System.in);
         input.useDelimiter("\n");
     }
