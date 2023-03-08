@@ -68,7 +68,8 @@ public class JsonReader {
         JSONArray petact = jsonObject.getJSONArray("petactions");
 
         Pet p = new Pet(petname, petage, typeofpet, petbreed, petweight);
-        p.updateactions(petact);
+
+        p.updateActionsJson(petact);
 
         hp.addPet(p);
     }

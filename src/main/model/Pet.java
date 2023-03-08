@@ -118,7 +118,7 @@ public class Pet implements Writable {
 
     // MODIFIES: this
     // EFFECTS: parses PetActions from JSON object and adds them to this.petactions
-    public void updateactions(JSONArray j) {
+    public void updateActionsJson(JSONArray j) {
         for (Object json : j) {
             JSONObject nextAction = (JSONObject) json;
             addAction(this, nextAction);
@@ -134,6 +134,12 @@ public class Pet implements Writable {
         String timeofactionp = jsonObject.getString("timeOfAction");
         PetAction action = new PetAction(name, actionp, timeofactionp);
         p.petactions.add(action);
+    }
+
+    // Modifies: this
+    // EFFECTS: adds all petactions from the given ArrayList into this.petactions
+    public void updateActions(ArrayList<PetAction> pa) {
+        this.petactions.addAll(pa);
     }
 
     public String getName() {

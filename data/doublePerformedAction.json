@@ -1,0 +1,31 @@
+{
+  "pets": [
+    {
+      "petactions": [
+        {
+          "actionPerformed": "Giving Water",
+          "petname": "swap",
+          "timeOfAction": "04:39:52"
+        },
+        {
+          "actionPerformed": "Giving Water",
+          "petname": "swap",
+          "timeOfAction": "12:30:44"
+        }
+      ],
+      "name": "swap",
+      "weight": 12,
+      "age": 12,
+      "breed": "labra",
+      "typeofpet": "dog"
+    },
+    {
+      "petactions": [],
+      "name": "abc",
+      "weight": 14,
+      "age": 12,
+      "breed": "abc",
+      "typeofpet": "cat"
+    }
+  ]
+}

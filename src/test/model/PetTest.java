@@ -2,9 +2,12 @@ package model;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import persistence.JsonReader;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PetTest {
     private Pet p;
@@ -81,6 +84,40 @@ public class PetTest {
     @Test
     public void getPetActionsTest() {
         assertEquals(0, p.getPetActions().size());
+    }
+
+    @Test
+    public void updateActionsSingleTest() {
+
+        JsonReader reader = new JsonReader("./data/singlePerformedAction.json");
+        try {
+            HouseOfPets hp = reader.read();
+            ArrayList<PetAction> expetactions = hp.getMyPets().get(0).petactions;
+            p.updateActions(expetactions);
+            assertEquals(1, p.petactions.size());
+            p.updateActions(expetactions);
+            assertEquals(2, p.petactions.size());
+        } catch (IOException e) {
+            fail("Couldn't read from file");
+        }
+        assertEquals(2, p.petactions.size());
+    }
+
+
+    @Test
+    public void updateActionsMultipleTest() {
+        JsonReader reader = new JsonReader("./data/doublePerformedAction.json");
+        try {
+            HouseOfPets hp = reader.read();
+            ArrayList<PetAction> expetactions = hp.getMyPets().get(0).petactions;
+            p.updateActions(expetactions);
+            assertEquals(2, p.petactions.size());
+            p.updateActions(expetactions);
+            assertEquals(4, p.petactions.size());
+        } catch (IOException e) {
+            fail("Couldn't read from file");
+        }
+        assertEquals(4, p.petactions.size());
     }
 
 
