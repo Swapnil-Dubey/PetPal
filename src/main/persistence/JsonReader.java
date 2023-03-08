@@ -12,7 +12,7 @@ import java.nio.file.Paths;
 import java.util.stream.Stream;
 
 // Source: Modelled code based on JsonReader.java class of JsonSerializationDemo
-// Represents a reader that reads workroom from JSON data stored in file
+// Represents a reader that reads HouseOfPets from JSON data stored in file
 public class JsonReader {
     private String source;
 
@@ -48,7 +48,7 @@ public class JsonReader {
     }
 
     // MODIFIES: hp
-    // EFFECTS: parses thingies from JSON object and adds them to workroom
+    // EFFECTS: parses thingies from JSON object and adds them to HouseOfPets
     private void addPets(HouseOfPets hp, JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("pets");
         for (Object json : jsonArray) {
@@ -58,7 +58,7 @@ public class JsonReader {
     }
 
     // MODIFIES: hp
-    // EFFECTS: parses Pet from JSON object and adds it to workroom
+    // EFFECTS: parses Pet from JSON object and adds it to HouseOfPets
     private void addPet(HouseOfPets hp, JSONObject jsonObject) {
         String petname = jsonObject.getString("name");
         Double petage = jsonObject.getDouble("age");

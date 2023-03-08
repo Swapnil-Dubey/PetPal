@@ -52,7 +52,7 @@ public class HouseOfPets implements Writable {
         return json;
     }
 
-    // EFFECTS: returns things in this workroom as a JSON array
+    // EFFECTS: returns pets in this HouseOfPets as a JSON array
     private JSONArray petsToJson() {
         JSONArray jsonArray = new JSONArray();
 

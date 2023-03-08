@@ -127,7 +127,7 @@ public class Pet implements Writable {
     }
 
     // MODIFIES: this
-    // EFFECTS: parses thingy from JSON object and adds it to workroom
+    // EFFECTS: parses PetAction from JSON object and adds it to this.petactions
     private void addAction(Pet p, JSONObject jsonObject) {
         String name = jsonObject.getString("petname");
         String actionp = jsonObject.getString("actionPerformed");
