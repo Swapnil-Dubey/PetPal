@@ -1,5 +1,6 @@
 package model;
 
+
 // Represents an action performed with the pet
 public class PetAction {
     private String petname;
@@ -37,4 +38,5 @@ public class PetAction {
     public void setPetname(String petname) {
         this.petname = petname;
     }
+
 }

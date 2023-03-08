@@ -1,9 +1,13 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.ArrayList;
 
 // Represents all the pets currently owned by the user, with no duplicates
-public class HouseOfPets {
+public class HouseOfPets implements Writable {
     private ArrayList<Pet> pets;
 
     // EFFECTS: Assign pets to a new ArrayList that can only have Pet.
@@ -39,5 +43,23 @@ public class HouseOfPets {
 
     public ArrayList<Pet> getMyPets() {
         return this.pets;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("pets", petsToJson());
+        return json;
+    }
+
+    // EFFECTS: returns things in this workroom as a JSON array
+    private JSONArray petsToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Pet p : pets) {
+            jsonArray.put(p.toJson());
+        }
+
+        return jsonArray;
     }
 }

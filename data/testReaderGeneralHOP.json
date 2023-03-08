@@ -1,0 +1,12 @@
+{
+  "pets": [
+    {
+      "petactions": [],
+      "name": "abc",
+      "weight": 12,
+      "age": 12,
+      "breed": "labra",
+      "typeofpet": "dog"
+    }
+  ]
+}

@@ -42,6 +42,8 @@ and software development.
 - As a user, I want to update an interaction with a pet I recently performed, such as giving water to the pet
 - As a user, I want to see a history of interactions performed with a selected pet
 - As a user, I want recommendations from the app for what to do at current time to cater to my pet's needs
+- As a user, I want to save my House of Pets to a file (if I so choose)
+- As a user, I want to be able to load my House of Pets from a file (if I so choose)
 
 
 

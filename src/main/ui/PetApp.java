@@ -3,7 +3,11 @@ package ui;
 import model.HouseOfPets;
 import model.Pet;
 import model.PetAction;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,10 +16,16 @@ import java.util.Scanner;
 public class PetApp {
     private HouseOfPets myhouse = new HouseOfPets();
     private Scanner input;
+    private static final String JSON_STORE = "./data/houseofpets.json";
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
 
 
     // EFFECTS: runs the Pet application
-    public PetApp() {
+    public PetApp() throws FileNotFoundException {
+        input = new Scanner(System.in);
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         runPet();
     }
 
@@ -55,6 +65,11 @@ public class PetApp {
             showPets();
         } else if (command.equals("h")) {
             history();
+        } else if (command.equals("save")) {
+            saveHOP();
+        } else if (command.equals("load")) {
+            loadHOP();
+
         } else {
             System.out.println("Selection not valid...");
         }
@@ -79,6 +94,8 @@ public class PetApp {
         System.out.println("\ta -> perform an action with the pet");
         System.out.println("\ts -> show names of all the pets currently stored in the house");
         System.out.println("\th -> show history of actions with a pet");
+        System.out.println("\tsave -> save work room to file");
+        System.out.println("\tload -> load work room from file");
         System.out.println("\tq -> quit");
     }
 
@@ -213,6 +230,29 @@ public class PetApp {
         } else {
             System.out.println("Please enter a valid response.");
             performAction(p);
+        }
+    }
+
+    // EFFECTS: saves the HouseOfPets to file
+    private void saveHOP() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(myhouse);
+            jsonWriter.close();
+            System.out.println("Saved House of Pets" + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads HouseOfPets from file
+    private void loadHOP() {
+        try {
+            myhouse = jsonReader.read();
+            System.out.println("Loaded House of Pets" + " from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
         }
     }
 }

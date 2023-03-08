@@ -1,11 +1,15 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
 // Represents a single pet and its performable actions
-public class Pet {
+public class Pet implements Writable {
     String name;
     Double age;
     String breed;
@@ -112,6 +116,26 @@ public class Pet {
 
     }
 
+    // MODIFIES: this
+    // EFFECTS: parses PetActions from JSON object and adds them to this.petactions
+    public void updateactions(JSONArray j) {
+        for (Object json : j) {
+            JSONObject nextAction = (JSONObject) json;
+            addAction(this, nextAction);
+        }
+
+    }
+
+    // MODIFIES: this
+    // EFFECTS: parses thingy from JSON object and adds it to workroom
+    private void addAction(Pet p, JSONObject jsonObject) {
+        String name = jsonObject.getString("petname");
+        String actionp = jsonObject.getString("actionPerformed");
+        String timeofactionp = jsonObject.getString("timeOfAction");
+        PetAction action = new PetAction(name, actionp, timeofactionp);
+        p.petactions.add(action);
+    }
+
     public String getName() {
         return this.name;
     }
@@ -121,4 +145,15 @@ public class Pet {
     }
 
 
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("age", age);
+        json.put("breed", breed);
+        json.put("weight", weight);
+        json.put("typeofpet", typeofpet);
+        json.put("petactions", petactions);
+        return json;
+    }
 }
