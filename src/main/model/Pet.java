@@ -150,6 +150,10 @@ public class Pet implements Writable {
         return this.petactions;
     }
 
+    public String getTypeofpet() {
+        return this.typeofpet;
+    }
+
 
     @Override
     public JSONObject toJson() {

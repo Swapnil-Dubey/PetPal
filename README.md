@@ -36,6 +36,7 @@ and software development.
 <!--Used Bulleted points to answer each of the questions.-->
 
 ## User Stories:
+
 - As a user, I want to be able to add my new pet to the list of pets I have
 - As a user, I want to be able to delete a pet I don't own anymore
 - As a user, I want to see all the pets I have in my house
@@ -45,10 +46,17 @@ and software development.
 - As a user, I want to save my House of Pets to a file (if I so choose)
 - As a user, I want to be able to load my House of Pets from a file (if I so choose)
 
+# Instructions for Grader
 
-
-
-
+- Run the GUI Application by running HouseOfPetsGUI.java file in UI Package.
+- You can generate the first required action related to adding Xs to a Y by clicking the button "Add a pet", thereafter
+  filling in the required information.
+- You can generate the second required action related to adding Xs to a Y by clicking the "Remove a pet" button,
+  thereafter choosing a pet you want to remove from the HouseOfPets.
+- You can locate my visual component by adding a pet first and then clicking "Show all pets" button which would show
+  names of the added pets along with corresponding images.
+- You can save the state of my application by clicking "Save" button.
+- You can reload the state of my application by clicking "Load" button.
 
 <!--
 ## A subtitle

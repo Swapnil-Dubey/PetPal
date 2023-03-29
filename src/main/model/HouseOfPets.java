@@ -9,6 +9,8 @@ import java.util.ArrayList;
 // Represents all the pets currently owned by the user, with no duplicates
 public class HouseOfPets implements Writable {
     private ArrayList<Pet> pets;
+    public static final int WIDTH = 800;
+    public static final int HEIGHT = 600;
 
     // EFFECTS: Assign pets to a new ArrayList that can only have Pet.
     public HouseOfPets() {

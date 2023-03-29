@@ -94,8 +94,8 @@ public class PetApp {
         System.out.println("\ta -> perform an action with the pet");
         System.out.println("\ts -> show names of all the pets currently stored in the house");
         System.out.println("\th -> show history of actions with a pet");
-        System.out.println("\tsave -> save work room to file");
-        System.out.println("\tload -> load work room from file");
+        System.out.println("\tsave -> save House of Pets to file");
+        System.out.println("\tload -> load House of Pets from file");
         System.out.println("\tq -> quit");
     }
 
