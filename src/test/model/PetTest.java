@@ -120,5 +120,10 @@ public class PetTest {
         assertEquals(4, p.petactions.size());
     }
 
+    @Test
+    public void getTypeofPetTest() {
+        assertEquals("Dog", p.getTypeofpet());
+    }
+
 
 }
