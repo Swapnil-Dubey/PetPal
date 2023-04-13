@@ -78,6 +78,11 @@ Put the jsonArray of pets into JSON object for saving locally\
 Wed Apr 12 17:13:07 PDT 2023\
 Created a list of Pet Names to be shown on screen 
 
+# Phase 4: Task 3
+Some of the refactoring I'd like to do to this project are:\
+Abstraction: Implementing abstraction in my UI package would help increase code cohesion and reduce code duplications. Specifically, if I create an abstract class for all the panels in my project and make each of them extend that class would help implement this idea. One potential disadvantage of this concept is, that if there is a problem or error in the abstract class, this would lead to errors in all classes that extend it.\
+Exception handling: Introducing exception handling to this project would make it even more robust and more ready to be deployed to the public for use. But Exception handling increases code complexity and increases the memory usage of our project.
+
 <!--
 ## A subtitle
 
