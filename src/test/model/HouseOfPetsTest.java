@@ -94,5 +94,11 @@ public class HouseOfPetsTest {
         assertEquals(p, mypets.getPetObject("Tommy"));
     }
 
+    @Test
+    public void getPetObjectDNEest() {
+        mypets.addPet(p);
+        assertNull(mypets.getPetObject("Kitty"));
+    }
+
 
 }

@@ -7,7 +7,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.assertFalse;
+// SOURCED FROM AlarmSystem Project of CPSC 210 Coursework
 /**
  * Unit tests for the Event class
  */
@@ -34,5 +35,21 @@ public class EventTest {
     @Test
     public void testToString() {
         assertEquals(d.toString() + "\n" + "Added Dog to HouseOfPets", e.toString());
+    }
+
+    @Test
+    public void testEqualsisNull() {
+        assertFalse(e == null);
+    }
+
+    @Test
+    public void testEqualsOfDiffClasses() {
+        assertFalse(e.equals(2));
+    }
+
+    @Test
+    public void testHashCode() {
+        int testHashCode = 13 * e.getDate().hashCode() + e.getDescription().hashCode();
+        assertEquals(testHashCode, e.hashCode());
     }
 }
