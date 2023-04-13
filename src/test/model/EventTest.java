@@ -39,12 +39,12 @@ public class EventTest {
 
     @Test
     public void testEqualsisNull() {
-        assertFalse(e == null);
+        assertFalse(e.equals(null));
     }
 
     @Test
-    public void testEqualsOfDiffClasses() {
-        assertFalse(e.equals(2));
+    public void testEqualsisDiffClasses() {
+        assertFalse(e.equals(5));
     }
 
     @Test
