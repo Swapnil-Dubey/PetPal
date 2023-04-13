@@ -5,7 +5,8 @@ import model.Pet;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
+import java.util.List;
+
 
 // Represents all functionality for showing all pets in GUI form of PetPal.
 public class ShowPetsPanel {
@@ -15,18 +16,18 @@ public class ShowPetsPanel {
         JPanel petPanel = new JPanel(new GridLayout(0, 2, 10, 10));
         petPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        ArrayList<Pet> pets = hop.getMyPets();
-        for (Pet pet : pets) {
+        List<String> petNames = hop.getPetNames();
+        for (String petName : petNames) {
             JPanel petInfoPanel = new JPanel(new BorderLayout());
             petInfoPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
-            JLabel petNameLabel = new JLabel(pet.getName(), SwingConstants.CENTER);
+            JLabel petNameLabel = new JLabel(petName, SwingConstants.CENTER);
             petNameLabel.setFont(new Font("Helvetica", Font.BOLD, 16));
             petInfoPanel.add(petNameLabel, BorderLayout.NORTH);
 
             ImageIcon petImageIcon;
             String petImageFileName;
-            petImageFileName = getAppropriateImagePath(pet);
+            petImageFileName = getAppropriateImagePath(hop.getPetObject(petName));
 
             petImageIcon = new ImageIcon(petImageFileName);
 

@@ -42,7 +42,7 @@ class JsonWriterTest {
 
             JsonReader reader = new JsonReader("./data/testWriterEmptyHOP.json");
             HouseOfPets hp1 = reader.read();
-            assertEquals(0, hp1.getsize());
+            assertEquals(0, hp1.getSize());
         } catch (IOException e) {
             fail("Exception should not have been thrown");
         }

@@ -1,5 +1,7 @@
 package ui;
 
+import model.Event;
+import model.EventLog;
 import model.HouseOfPets;
 
 import javax.swing.*;
@@ -7,6 +9,8 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 // Represents GUI Version Window for PetPal
 public class HouseOfPetsGUI extends JFrame implements ActionListener {
@@ -30,24 +34,42 @@ public class HouseOfPetsGUI extends JFrame implements ActionListener {
         super("PetPal");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setUndecorated(false);
-        hop = new HouseOfPets();
-        frame = new JFrame();
-        Border border = BorderFactory.createLineBorder(Color.BLUE, 3);
-        panel = new JPanel(new GridBagLayout());
+        setupBasics();
         frame.add(panel);
-
         constraints = new GridBagConstraints();
         positioningOne();
         positioningTwo();
         positioningThree();
         detectingButtons();
-
         panel.setBackground(new Color(150, 111, 51));
+        frameSettings();
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                EventLog eventLog = EventLog.getInstance();
+                for (Event event : eventLog) {
+                    System.out.println(event);
+                }
+            }
+        });
+    }
 
+    // MODIFIES: JFrame
+    // EFFECTS: Sets settings of the JFrame
+
+    private void frameSettings() {
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.setSize(1000, 800);
         frame.setVisible(true);
         frame.setResizable(false);
+    }
+    // MODIFIES: JFrame, JPanel, HouseOfPets
+    // EFFECTS: Sets up basic components of the project
+
+    private void setupBasics() {
+        hop = new HouseOfPets();
+        frame = new JFrame();
+        panel = new JPanel(new GridBagLayout());
     }
 
     // MODIFIES: panel

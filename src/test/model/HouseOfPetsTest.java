@@ -13,23 +13,22 @@ public class HouseOfPetsTest {
 
     @BeforeEach
     public void setup() {
-        Pet p = new Pet("Tommy", 1.0, "Dog", "Labra", 70.0);
-        Pet p1 = new Pet("Kitty", 3.0, "Cat", "Ragdoll", 72.0);
-
+        p = new Pet("Tommy", 1.0, "Dog", "Labra", 70.0);
+        p1 = new Pet("Kitty", 3.0, "Cat", "Ragdoll", 72.0);
         mypets = new HouseOfPets();
 
     }
 
     @Test
     public void houseOfPetsTest() {
-        assertEquals(0, mypets.getsize());
+        assertEquals(0, mypets.getSize());
     }
 
     @Test
     public void removePetTest() {
         assertTrue(mypets.addPet(p));
         assertTrue(mypets.removePet(p));
-        assertEquals(0, mypets.getsize());
+        assertEquals(0, mypets.getSize());
     }
 
     @Test
@@ -37,7 +36,7 @@ public class HouseOfPetsTest {
         assertTrue(mypets.addPet(p));
         assertTrue(mypets.addPet(p1));
         assertTrue(mypets.removePet(p));
-        assertEquals(1, mypets.getsize());
+        assertEquals(1, mypets.getSize());
         assertEquals(p1, mypets.getMyPets().get(0));
     }
 
@@ -58,23 +57,41 @@ public class HouseOfPetsTest {
     @Test
     public void addPetTest() {
         assertTrue(mypets.addPet(p));
-        assertEquals(1, mypets.getsize());
+        assertEquals(1, mypets.getSize());
 
     }
 
     @Test
     public void addPetMultipleTimesTest() {
         assertTrue(mypets.addPet(p));
-        assertEquals(1, mypets.getsize());
+        assertEquals(1, mypets.getSize());
         assertTrue(mypets.addPet(p1));
-        assertEquals(2, mypets.getsize());
+        assertEquals(2, mypets.getSize());
     }
 
     @Test
     public void getMyPetsTest() {
-        assertEquals(0, mypets.getsize());
+        assertEquals(0, mypets.getSize());
         assertTrue(mypets.addPet(p));
-        assertEquals(1, mypets.getsize());
+        assertEquals(1, mypets.getSize());
+    }
+
+    @Test
+    public void getPetNamesTest() {
+        mypets.addPet(p);
+        mypets.addPet(p1);
+        assertEquals(2, mypets.getPetNames().size());
+        assertEquals("Tommy", mypets.getPetNames().get(0));
+        assertEquals("Kitty", mypets.getPetNames().get(1));
+    }
+
+
+    @Test
+    public void getPetObjectTest() {
+        mypets.addPet(p);
+        mypets.addPet(p1);
+        assertEquals(p1, mypets.getPetObject("Kitty"));
+        assertEquals(p, mypets.getPetObject("Tommy"));
     }
 
 

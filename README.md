@@ -58,6 +58,26 @@ and software development.
 - You can save the state of my application by clicking "Save" button.
 - You can reload the state of my application by clicking "Load" button.
 
+# Phase 4: Task 2
+Wed Apr 12 17:12:55 PDT 2023 \
+Added Pet: Tommy\
+Wed Apr 12 17:12:56 PDT 2023\
+Removed Pet: Tommy\
+Wed Apr 12 17:12:58 PDT 2023\
+Added Pet: ABC\
+Wed Apr 12 17:13:02 PDT 2023\
+Played with Pet: ABC\
+Wed Apr 12 17:13:04 PDT 2023\
+Played with Pet: ABC\
+Wed Apr 12 17:13:05 PDT 2023\
+Converted pet to JSON format for saving locally\
+Wed Apr 12 17:13:05 PDT 2023\
+Created a JSON array of all pets in HouseOfPets for saving locally\
+Wed Apr 12 17:13:05 PDT 2023\
+Put the jsonArray of pets into JSON object for saving locally\
+Wed Apr 12 17:13:07 PDT 2023\
+Created a list of Pet Names to be shown on screen 
+
 <!--
 ## A subtitle
 

@@ -1,8 +1,6 @@
 package ui;
 
-import model.HouseOfPets;
-import model.Pet;
-import model.PetAction;
+import model.*;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
@@ -48,7 +46,10 @@ public class PetApp {
                 processCommand(command);
             }
         }
-
+        EventLog mylog = EventLog.getInstance();
+        for (Event e: mylog) {
+            System.out.println(e.getDescription() + " at " + e.getDate());
+        }
         System.out.println("\nGoodbye!");
     }
 
@@ -114,7 +115,7 @@ public class PetApp {
         System.out.println("\n Enter the weight of the pet: ");
         Double weight = input.nextDouble();
         Pet mypet = new Pet(name, age, type, breed, weight);
-        myhouse.getMyPets().add(mypet);
+        myhouse.addPet(mypet);
     }
 
     // MODIFIES: myhouse
@@ -135,7 +136,7 @@ public class PetApp {
     // EFFECTS: prints out the names of pets in myhouse
     private void showPets() {
         for (int i = 0; i < myhouse.getMyPets().size(); i++) {
-            System.out.println("Pet: " + myhouse.getMyPets().get(i).getName());
+            System.out.println("Pet: " + myhouse.getPetNames().get(i));
         }
     }
 

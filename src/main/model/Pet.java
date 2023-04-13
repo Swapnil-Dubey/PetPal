@@ -34,7 +34,7 @@ public class Pet implements Writable {
     public boolean playWith() {
         PetAction playingaction = new PetAction(name, "Playing", timeformat.format(currentdate));
         this.petactions.add(playingaction);
-        System.out.println("Played with " + this.getName() + ". Woohoo So fun!");
+        EventLog.getInstance().logEvent(new Event("Played with Pet: " + this.getName()));
         return true;
     }
 
@@ -46,7 +46,8 @@ public class Pet implements Writable {
         wateraction.setActionperformed("Giving Water");
         wateraction.setTimeofaction(timeformat.format(currentdate));
         this.petactions.add(wateraction);
-        System.out.println("Slurp Slurp.");
+        EventLog.getInstance().logEvent(new Event("Gave Water to Pet: " + this.getName()));
+
         return true;
 
     }
@@ -59,7 +60,8 @@ public class Pet implements Writable {
         foodaction.setActionperformed("Giving Food");
         foodaction.setTimeofaction(timeformat.format(currentdate));
         this.petactions.add(foodaction);
-        System.out.println("Chomp Chomp.");
+        EventLog.getInstance().logEvent(new Event("Gave Food to Pet: " + this.getName()));
+
         return true;
 
     }
@@ -72,7 +74,8 @@ public class Pet implements Writable {
         treataction.setActionperformed("Giving Treats");
         treataction.setTimeofaction(timeformat.format(currentdate));
         this.petactions.add(treataction);
-        System.out.println("Chomp Chomp Yum!");
+        EventLog.getInstance().logEvent(new Event("Gave Treats to Pet: " + this.getName()));
+
         return true;
 
     }
@@ -85,7 +88,8 @@ public class Pet implements Writable {
         walkingaction.setActionperformed("Walking");
         walkingaction.setTimeofaction(timeformat.format(currentdate));
         this.petactions.add(walkingaction);
-        System.out.println("Ah So tired now!");
+        EventLog.getInstance().logEvent(new Event("Took Pet: " + this.getName() + " for a walk."));
+
         return true;
 
     }
@@ -98,7 +102,8 @@ public class Pet implements Writable {
         trainingaction.setActionperformed("Training");
         trainingaction.setTimeofaction(timeformat.format(currentdate));
         this.petactions.add(trainingaction);
-        System.out.println("Trained!");
+        EventLog.getInstance().logEvent(new Event("Trained Pet: " + this.getName()));
+
         return true;
 
     }
@@ -111,7 +116,8 @@ public class Pet implements Writable {
         groomingaction.setActionperformed("Grooming");
         groomingaction.setTimeofaction(timeformat.format(currentdate));
         this.petactions.add(groomingaction);
-        System.out.println("Brush Brush");
+        EventLog.getInstance().logEvent(new Event("Groomed Pet: " + this.getName()));
+
         return true;
 
     }
@@ -123,7 +129,6 @@ public class Pet implements Writable {
             JSONObject nextAction = (JSONObject) json;
             addAction(this, nextAction);
         }
-
     }
 
     // MODIFIES: this
@@ -164,6 +169,8 @@ public class Pet implements Writable {
         json.put("weight", weight);
         json.put("typeofpet", typeofpet);
         json.put("petactions", petactions);
+        EventLog.getInstance().logEvent(new Event("Converted pet to JSON format for saving locally"));
+
         return json;
     }
 }

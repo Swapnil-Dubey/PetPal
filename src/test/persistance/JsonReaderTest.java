@@ -30,7 +30,7 @@ class JsonReaderTest {
         JsonReader reader = new JsonReader("./data/testReaderEmptyHOP.json");
         try {
             HouseOfPets hp = reader.read();
-            assertEquals(0, hp.getsize());
+            assertEquals(0, hp.getSize());
         } catch (IOException e) {
             fail("Couldn't read from file");
         }
