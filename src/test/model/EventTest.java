@@ -8,7 +8,6 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-// SOURCED FROM AlarmSystem Project of CPSC 210 Coursework
 /**
  * Unit tests for the Event class
  */

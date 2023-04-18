@@ -3,7 +3,6 @@ package model;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
-// SOURCED FROM AlarmSystem Project CPSC 210 Coursework
 /**
  * Represents a log of HouseOfPets events.
  * We use the Singleton Design Pattern to ensure that there is only

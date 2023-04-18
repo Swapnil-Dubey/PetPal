@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// Source: took help from AccountNotRobust-TellerApp.java for creating this PetApp UI
 // Pet-Care tracking application
 public class PetApp {
     private HouseOfPets myhouse = new HouseOfPets();

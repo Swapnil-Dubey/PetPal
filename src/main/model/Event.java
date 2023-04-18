@@ -3,7 +3,6 @@ package model;
 import java.util.Calendar;
 import java.util.Date;
 
-// SOURCED FROM AlarmSystem Project CPSC 210 Coursework
 /**
  * Represents a HouseOfPets event.
  */
